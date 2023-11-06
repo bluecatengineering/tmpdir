@@ -77,7 +77,7 @@ impl TmpDir {
                 .collect()
         };
 
-        inner.push(&format!("{}-{}", s, prefix.as_ref()));
+        inner.push(&format!("{}-{}", prefix.as_ref(), s));
 
         fs::create_dir(&inner).await?;
         Ok(Self { inner })
